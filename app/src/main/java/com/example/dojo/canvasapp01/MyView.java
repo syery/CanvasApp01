@@ -37,8 +37,8 @@ public class MyView extends View {
 
         //四角
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.DKGRAY);
-        canvas.drawRect(400,800,600,1000,paint);
+        paint.setColor(Color.WHITE);
+        canvas.drawRect(150,200,690,600,paint);
 
         //線
         paint.setColor(Color.WHITE);
@@ -47,20 +47,18 @@ public class MyView extends View {
         canvas.drawLine(0,canvas.getHeight(),canvas.getWidth(),0,paint);
 
         //三角形
-        paint.setColor(Color.GRAY);
-        path.moveTo(500,500);
-        path.lineTo(700,900);
-        path.lineTo(800,400);
-        path.lineTo(500,500);
-        canvas.drawPath(path,paint);
 
-        path.reset();
         paint.setStyle(Paint.Style.STROKE);
         path.moveTo(400,400);
         path.lineTo(800,700);
         path.lineTo(700,400);
         path.lineTo(400,400);
         canvas.drawPath(path,paint);
+
+        //国旗
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.GREEN);
+        canvas.drawRect(150,200,690,600,paint);
 
 
     }
