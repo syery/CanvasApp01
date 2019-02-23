@@ -4,10 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.view.View;
 
 public class MyView extends View {
     private Paint paint;
+    private Path path;
 
 
     //コンストラクタ(初期設定
@@ -15,6 +17,7 @@ public class MyView extends View {
         super(Con);
 
         paint = new Paint();
+        path = new Path();
     }
 
     //絵画の処理
@@ -41,7 +44,23 @@ public class MyView extends View {
         paint.setColor(Color.WHITE);
         paint.setStrokeWidth(20);
         canvas.drawLine(0,0,canvas.getWidth(),canvas.getHeight(),paint);
-        canvas.drawLine(0,canvas.getWidth(),canvas.getHeight(),0,paint);
+        canvas.drawLine(0,canvas.getHeight(),canvas.getWidth(),0,paint);
+
+        //三角形
+        paint.setColor(Color.GRAY);
+        path.moveTo(500,500);
+        path.lineTo(700,900);
+        path.lineTo(800,400);
+        path.lineTo(500,500);
+        canvas.drawPath(path,paint);
+
+        path.reset();
+        paint.setStyle(Paint.Style.STROKE);
+        path.moveTo(400,400);
+        path.lineTo(800,700);
+        path.lineTo(700,400);
+        path.lineTo(400,400);
+        canvas.drawPath(path,paint);
 
 
     }
