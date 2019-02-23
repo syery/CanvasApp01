@@ -31,6 +31,12 @@ public class MyView extends View {
         canvas.drawCircle(300,500,90,paint);
         paint.setColor(Color.GREEN);
         canvas.drawCircle(400,500,90,paint);
+
+        //四角
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.DKGRAY);
+        canvas.drawRect(400,800,600,1000,paint);
+
     }
 
 
