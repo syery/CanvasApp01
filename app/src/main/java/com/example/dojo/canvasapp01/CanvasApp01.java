@@ -10,5 +10,8 @@ public class CanvasApp01 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
  //       setContentView(R.layout.activity_canvas_app01);
 
+        MyView myView = new MyView(this);
+        setContentView(myView);
+
     }
 }
